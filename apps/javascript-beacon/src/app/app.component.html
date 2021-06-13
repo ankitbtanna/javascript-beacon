@@ -1,9 +1,17 @@
 <div style="text-align: center">
   <h1>Welcome to javascript-beacon!</h1>
+  <h3>{{timeSpent}}</h3>
   <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Smart, Extensible Build Framework"
+  height="500"    
+    src="../assets/images/image-{{currentImageId}}.webp"
   />
+  <br/>
+  <button (click)="resetTime();previous();">Previous</button>
+  <button (click)="resetTime();next();">Next</button>
+  <br/>
+
+  <button (click)="sendAnalytics('content 1')">Send Beacon 1</button>
+  <button (click)="sendAnalytics('content 2')">Send Beacon 2</button>
+  <button (click)="sendAnalytics('content 3')">Send Beacon 3</button>
+  <button (click)="sendAnalytics({name: 'Ankit\'s beacon'})">Send Beacon 4</button>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>

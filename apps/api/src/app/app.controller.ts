@@ -1,15 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
-
-import { Message } from '@javascript-beacon/api-interfaces';
-
-import { AppService } from './app.service';
+import { Controller, Post, Req } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
-  getData(): Message {
-    return this.appService.getData();
+  @Post('analytics')
+  logAnalytics(@Req() req): void {
+    console.log('############# BEACON SIGNAL ##############');
+    console.log(req.body);
+    console.log('##########################################');
   }
 }
